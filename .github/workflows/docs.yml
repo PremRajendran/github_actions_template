@@ -36,7 +36,7 @@ jobs:
       - name: Build HTML
         run: |
           # Replace 'docs' with your sphinx source directory if different
-          sphinx-build -b html docs docs/_build/html
+          sphinx-build -b html docs/source docs/build/html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Point this to where sphinx-build output the HTML
-          path: 'docs/_build/html'
+          path: 'docs/build/html'
 
   deploy:
     environment:
